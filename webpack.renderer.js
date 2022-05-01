@@ -1,6 +1,7 @@
 const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const makeConfig = require('./webpack.makeConfig.js');
 
@@ -21,6 +22,9 @@ module.exports = defaultConfig =>
                 /node_modules[\\/]+@vernier[\\/]+godirect/
             ],
             plugins: [
+                new WebpackShellPlugin({
+                    onBuildStart: ['node scripts/prepare.js']
+                }),
                 new CopyWebpackPlugin([{
                     from: path.join(getModulePath('openblock-blocks'), 'media'),
                     to: 'static/blocks-media'
