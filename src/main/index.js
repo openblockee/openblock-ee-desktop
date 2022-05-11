@@ -281,7 +281,7 @@ const createPrivacyWindow = () => {
 const createLoadingWindow = () => {
     const window = createWindow({
         width: 800,
-        height: 150,
+        height: 450,
         frame: false,
         resizable: false,
         transparent: true,
@@ -548,7 +548,7 @@ app.on('ready', () => {
             .then(() => {
                 // after finsh load progress show main window and close loading window
                 _windows.main.show();
-                _windows.loading.close();
+                // _windows.loading.close();
                 delete _windows.loading;
             })
             .catch(async e => {

@@ -3,14 +3,10 @@ directories:
   output: dist
 extraResources: ["tools", "external-resources", 'firmwares', "statics", "drivers"]
 
-appId: openblock.cc.openblock-desktop
-productName: "OpenBlock Desktop"
+appId: openblock.cc.openblock-desktop-custom
+productName: "OpenBlock Desktop (Candlelight)"
 publish:
   - provider: github
-  - provider: spaces
-    name: openblock
-    path: desktop
-    region: sgp1
 
 fileAssociations:
   ext: ob
@@ -61,4 +57,4 @@ nsis:
   allowToChangeInstallationDirectory: true
   include: buildResources/installer.nsh
 #   license: LICENSE
-  artifactName: "OpenBlock-Desktop_${version}.${ext}"
+  artifactName: "OpenBlock-Desktop-烛光义教版_${version}.${ext}"

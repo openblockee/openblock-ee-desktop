@@ -17,13 +17,20 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .logo{
-            overflow: hidden;
+        .logo-warpper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             position: fixed;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 400px;
+        }
+        .logo{
+            overflow: hidden;
+            margin-top: 20px;
+            height: 80px;
         }
     </style>
 </head>
@@ -31,11 +38,15 @@
     <div id="app">
         <!-- According to the actual needs, cancel the comments below and select the desired display content -->
         <!-- Option 1: Display some text in the initial interface -->
-        <p class="splash">OpenBlock is loading...</p>
+        <!-- <p class="splash">OpenBlock is loading...</p> -->
 
         <!-- Option 2: Display image in the initial interface. Support .gif format,
             and the interface will be loaded after GIF playback is completed -->
         <!-- <img class="logo" src="./renderer/static/logo.png" /> -->
+        <div class="logo-warpper">
+            <img class="logo" src="./renderer/static/logo.png" />
+            <img class="logo" src="./renderer/static/sub-logo.png" />
+        </div>
     </div>
 </body>
 </html>
