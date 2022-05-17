@@ -15,7 +15,7 @@ class OpenblockDesktopUpdater {
         this._resourceServer = resourceServer;
 
         autoUpdater.autoDownload = false;
-        autoUpdater.allowDowngrade = true;
+        // autoUpdater.allowDowngrade = true;
 
         this.isCN = app.getLocaleCountryCode() === 'CN';
 

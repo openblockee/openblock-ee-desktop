@@ -516,22 +516,6 @@ app.on('ready', () => {
             }
         });
     }
-
-    _windows.main = createMainWindow();
-    _windows.main.on('closed', () => {
-        delete _windows.main;
-    });
-    _windows.about = createAboutWindow();
-    _windows.about.on('close', event => {
-        event.preventDefault();
-        _windows.about.hide();
-    });
-    _windows.privacy = createPrivacyWindow();
-    _windows.privacy.on('close', event => {
-        event.preventDefault();
-        _windows.privacy.hide();
-    });
-
     ipcMain.on('clearCache', () => {
         desktopLink.clearCache();
     });
@@ -546,9 +530,25 @@ app.on('ready', () => {
         desktopLink.updateCahce();
         desktopLink.start()
             .then(() => {
+                _windows.main = createMainWindow();
+                _windows.main.on('closed', () => {
+                    delete _windows.main;
+                });
+
+                _windows.about = createAboutWindow();
+                _windows.about.on('close', event => {
+                    event.preventDefault();
+                    _windows.about.hide();
+                });
+                _windows.privacy = createPrivacyWindow();
+                _windows.privacy.on('close', event => {
+                    event.preventDefault();
+                    _windows.privacy.hide();
+                });
+
                 // after finsh load progress show main window and close loading window
                 _windows.main.show();
-                // _windows.loading.close();
+                _windows.loading.close();
                 delete _windows.loading;
             })
             .catch(async e => {
