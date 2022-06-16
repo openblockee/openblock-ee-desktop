@@ -24,7 +24,7 @@ jobs:
         with: 
           repository: openblockee/openblock-ee-blocks
           ref: refs/heads/main
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-blocks
       - uses: actions/setup-python@v2
         with:
@@ -45,7 +45,7 @@ jobs:
         with: 
           repository: openblockee/openblock-ee-link
           ref: refs/heads/develop
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-link
       - run: |
           cd openblock-link
@@ -57,7 +57,7 @@ jobs:
         with: 
           repository: openblockcc/openblock-resource
           ref: refs/heads/main
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-resource
       - run: |
           cd openblock-resource
@@ -69,7 +69,7 @@ jobs:
         with: 
           repository: openblockee/openblock-ee-vm
           ref: refs/heads/develop
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-vm  
       - run: |
           cd openblock-vm
@@ -81,7 +81,7 @@ jobs:
         with: 
           repository: openblockee/openblock-ee-gui
           ref: refs/heads/zhuguang-desktop
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-gui  
       - run: |
           cd openblock-gui
@@ -95,7 +95,7 @@ jobs:
         with: 
           repository: openblockee/openblock-ee-desktop
           ref: refs/heads/zhuguang
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}
           path: openblock-desktop  
       - run: |
           cd openblock-desktop
@@ -104,7 +104,7 @@ jobs:
                    
       - name: Build Dist
         env:
-          GA_ID: ${{ secrets.GA_ID }}
+          # GA_ID: ${{ secrets.GA_ID }}
           NODE_ENV: production
           NODE_OPTIONS: --max_old_space_size=4096
         run: |
