@@ -100,28 +100,28 @@ class OpenblockDesktopUpdater {
     }
 
     checkUpdateAtStartup () {
-        autoUpdater.on('error', err => {
-            this.removeAllAutoUpdaterListeners();
-            console.warn(`Error while checking for application update: ${err}`);
-        });
-        autoUpdater.once('update-available', applicationUpdateInfo => {
-            this.removeAllAutoUpdaterListeners();
-            this.applicationAvailable(applicationUpdateInfo);
-        });
-        autoUpdater.once('update-not-available', () => {
-            this.removeAllAutoUpdaterListeners();
-            this._resourceServer.checkUpdate()
-                .then(resourceUpdateInfo => {
-                    if (resourceUpdateInfo.updateble) {
-                        this.resourceAvailable(resourceUpdateInfo);
-                    }
-                })
-                .catch(err => {
-                    console.warn(`Error while checking for resource update: ${err}`);
-                });
-        });
+        // autoUpdater.on('error', err => {
+        //     this.removeAllAutoUpdaterListeners();
+        //     console.warn(`Error while checking for application update: ${err}`);
+        // });
+        // autoUpdater.once('update-available', applicationUpdateInfo => {
+        //     this.removeAllAutoUpdaterListeners();
+        //     this.applicationAvailable(applicationUpdateInfo);
+        // });
+        // autoUpdater.once('update-not-available', () => {
+        //     this.removeAllAutoUpdaterListeners();
+        //     this._resourceServer.checkUpdate()
+        //         .then(resourceUpdateInfo => {
+        //             if (resourceUpdateInfo.updateble) {
+        //                 this.resourceAvailable(resourceUpdateInfo);
+        //             }
+        //         })
+        //         .catch(err => {
+        //             console.warn(`Error while checking for resource update: ${err}`);
+        //         });
+        // });
 
-        autoUpdater.checkForUpdates();
+        // autoUpdater.checkForUpdates();
     }
 
     reqeustCheckUpdate () {
@@ -148,9 +148,9 @@ class OpenblockDesktopUpdater {
             }
         });
         autoUpdater.once('update-available', applicationUpdateInfo => {
-            this.updaterState = UPDATE_MODAL_STATE.applicationUpdateAvailable;
-            this.removeAllAutoUpdaterListeners();
-            this.applicationAvailable(applicationUpdateInfo);
+            // this.updaterState = UPDATE_MODAL_STATE.applicationUpdateAvailable;
+            // this.removeAllAutoUpdaterListeners();
+            // this.applicationAvailable(applicationUpdateInfo);
         });
         autoUpdater.once('update-not-available', () => {
             this.removeAllAutoUpdaterListeners();
