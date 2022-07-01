@@ -68,7 +68,7 @@ jobs:
         uses: actions/checkout@v2
         with: 
           repository: openblockee/openblock-ee-vm
-          ref: refs/heads/develop
+          ref: refs/heads/zhuguang
           token: ${{ secrets.GH_TOKEN }}
           path: openblock-vm  
       - run: |
