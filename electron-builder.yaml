@@ -1,10 +1,10 @@
 directories:
   buildResources: buildResources
   output: dist
-extraResources: ["tools", "external-resources", 'firmwares', "statics", "drivers"]
+extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
 
 appId: openblock.cc.openblock-desktop
-productName: "OpenBlock Desktop"
+productName: "OpenBlockDesktop"
 publish:
   - provider: github
   - provider: spaces
