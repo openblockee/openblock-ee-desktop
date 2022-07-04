@@ -4,11 +4,11 @@ directories:
 extraFiles: ['LICENSE', 'LICENSE.ScratchFoundation', 'TRADEMARK', "tools", "external-resources", 'firmwares', "drivers"]
 
 appId: openblock.cc.openblock-desktop
-productName: "OpenBlockDesktop"
+productName: "OpenBlockDesktopEE"
 publish:
   - provider: github
   - provider: spaces
-    name: openblock
+    name: openblockee
     path: desktop
     region: sgp1
 
@@ -30,12 +30,12 @@ mac:
   hardenedRuntime: true
   icon: buildResources/OpenBlockDesktop.icns
   provisioningProfile: embedded.provisionprofile
-  artifactName: "OpenBlock-Desktop_${version}.${ext}"
+  artifactName: "OpenBlock-Desktop-EE_${version}.${ext}"
   target:
     - dmg
     # - mas
 dmg:
-  title: "OpenBlock-Desktop_${version}"
+  title: "OpenBlock-Desktop-EE_${version}"
 # mas:
 #   category: public.app-category.education
 #   entitlements: buildResources/entitlements.mas.plist
@@ -47,7 +47,7 @@ dmg:
 #   provisioningProfile: mas-dev.provisionprofile
 
 win:
-  icon: buildResources/OpenBlockDesktop.ico
+  icon: buildResources/OpenBlockDesktopEE.ico
   target:
     # - appx
     - nsis
@@ -61,4 +61,4 @@ nsis:
   allowToChangeInstallationDirectory: true
   include: buildResources/installer.nsh
 #   license: LICENSE
-  artifactName: "OpenBlock-Desktop_${version}.${ext}"
+  artifactName: "OpenBlock-Desktop-EE_${version}.${ext}"

@@ -1,8 +1,8 @@
 #!/bin/bash
-SRC=../src/icon/OpenBlockDesktop.svg
-OUT_ICONSET=OpenBlockDesktop.iconset
-OUT_ICNS=OpenBlockDesktop.icns
-OUT_ICO=OpenBlockDesktop.ico
+SRC=../src/icon/OpenBlockDesktopEE.svg
+OUT_ICONSET=OpenBlockDesktopEE.iconset
+OUT_ICNS=OpenBlockDesktopEE.icns
+OUT_ICO=OpenBlockDesktopEE.ico
 TMP_ICO=tmp
 
 ICO_BASIC_SIZES="16 24 32 48 256"
